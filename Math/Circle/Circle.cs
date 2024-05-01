@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ForThisCity.Utils
+namespace ZivDoron.Utils
 {
     public static class Circle
     {
@@ -183,5 +183,10 @@ namespace ForThisCity.Utils
             return length / 360 * AngleDifference(firstAngle, secondAngle);
         }
 
+        public static float ConvertEulerToPositive(float angle)
+        {
+            angle = (angle > 180) ? angle - 360 : angle;
+            return angle;
+        }
     }
 }
