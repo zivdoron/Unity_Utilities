@@ -183,9 +183,14 @@ namespace ZivDoron.Utils
             return length / 360 * AngleDifference(firstAngle, secondAngle);
         }
 
-        public static float ConvertEulerToPositive(float angle)
+        public static float ConvertAngleToEuler(float angle)
         {
             angle = (angle > 180) ? angle - 360 : angle;
+            return angle;
+        }
+        public static float ConvertEulerToAngle(float angle)
+        {
+            angle = (angle < 0) ? angle + 360 : angle;
             return angle;
         }
     }
